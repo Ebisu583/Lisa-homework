@@ -1,6 +1,9 @@
 class HomeworksController < ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
+
   def index
     @homeworks = Homework.all
   end

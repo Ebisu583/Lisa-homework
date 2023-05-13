@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: "homeworks#home"
   get "homeworks", to: "homeworks#index"
   get "homeworks/new", to: "homeworks#new", as: :new_homework
   post "homeworks", to: "homeworks#create"
