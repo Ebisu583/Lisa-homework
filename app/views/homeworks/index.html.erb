@@ -1,0 +1,26 @@
+
+<div class="container mt-5">
+<h1>My homeworks:</h1>
+  <ul id="homeworks">
+
+    <% @homeworks.each do |homework| %>
+      <li>
+        <% if homework.completed? %>
+          <i class="fa-regular fa-square-check"></i>
+        <% else %>
+          <i class="fa-regular fa-square"></i>
+       <% end %>
+        <%= link_to homework.title, homework_path(homework.id) %>
+        <%= link_to homework_path(homework.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{homework.title}?"} do %>
+          <i class="fa-regular fa-trash-can"></i>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <%= link_to new_homework_path do %>
+    <i class="fa-solid fa-plus"></i> Add a new homework
+  <% end %>
+</div>
